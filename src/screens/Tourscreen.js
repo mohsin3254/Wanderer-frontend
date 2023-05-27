@@ -33,7 +33,11 @@ function Tourscreen() {
       try {
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/tours/getalltours")).data;
+        const data = (
+          await axios.get(
+            "https://wondertour.onrender.com/api/tours/getalltours"
+          )
+        ).data;
         //console.log(data);
         setTours(data);
         setDuplicateTours(data);
