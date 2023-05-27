@@ -27,9 +27,12 @@ function TourBookingscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/tours/gettourbyid", {
-            tourid: match.params.tourid,
-          })
+          await axios.post(
+            "https://wondertour.onrender.com/api/tours/gettourbyid",
+            {
+              tourid: match.params.tourid,
+            }
+          )
         ).data;
         //console.log(data);
         setTour(data);
