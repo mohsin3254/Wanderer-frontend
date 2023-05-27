@@ -32,7 +32,11 @@ function AdminTourScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/tours/getalltours")).data;
+      const data = (
+        await axios.post(
+          "https://wondertour.onrender.com/api/tours/getalltours"
+        )
+      ).data;
       setTours(data);
     } catch (error) {
       console.log(error);

@@ -26,7 +26,11 @@ function Productscreen() {
       try {
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/products/getallproducts")).data;
+        const data = (
+          await axios.get(
+            "https://wondertour.onrender.com/api/products/getallproducts"
+          )
+        ).data;
         //console.log(data);
         setProducts(data);
       } catch (error) {

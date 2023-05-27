@@ -34,7 +34,12 @@ function AdminAddTourScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/tours/addtour", values)).data;
+      const data = (
+        await axios.post(
+          "https://wondertour.onrender.com/api/tours/addtour",
+          values
+        )
+      ).data;
       Swal.fire("Congratulations", "Your Tour Added Successfully", "success");
       form.resetFields();
     } catch (error) {

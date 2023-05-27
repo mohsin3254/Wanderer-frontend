@@ -24,9 +24,12 @@ function ProductBuyscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/products/getproductbyid", {
-            productid: match.params.productid,
-          })
+          await axios.post(
+            "https://wondertour.onrender.com/api/products/getproductbyid",
+            {
+              productid: match.params.productid,
+            }
+          )
         ).data;
         //console.log(data);
         setProduct(data);
@@ -57,7 +60,7 @@ function ProductBuyscreen({ match }) {
     try {
       setLoading(false);
       const result = await axios.post(
-        "/api/buyproduct/buyproducts",
+        "https://wondertour.onrender.com/api/buyproduct/buyproducts",
         buyDetails
       );
       console.log(result);

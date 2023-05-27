@@ -18,9 +18,12 @@ function MyBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/bookings/getbookingbyuserid", {
-          userid: user._id,
-        })
+        await axios.post(
+          "https://wondertour.onrender.com/api/bookings/getbookingbyuserid",
+          {
+            userid: user._id,
+          }
+        )
       ).data;
       setBookings(data);
     } catch (error) {
@@ -39,10 +42,13 @@ function MyBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/bookings/cancelbooking", {
-          bookingid,
-          roomid,
-        })
+        await axios.post(
+          "https://wondertour.onrender.com/api/bookings/cancelbooking",
+          {
+            bookingid,
+            roomid,
+          }
+        )
       ).data;
       setLoading(false);
       Swal.fire(

@@ -27,9 +27,12 @@ function Bookingscreen({ match }) {
         setError("");
         setLoading(true);
         const data = (
-          await axios.post("/api/rooms/getroombyid", {
-            roomid: match.params.roomid,
-          })
+          await axios.post(
+            "https://wondertour.onrender.com/api/rooms/getroombyid",
+            {
+              roomid: match.params.roomid,
+            }
+          )
         ).data;
         //console.log(data);
         setRoom(data);
@@ -63,7 +66,10 @@ function Bookingscreen({ match }) {
 
     try {
       setLoading(false);
-      const result = await axios.post("/api/bookings/bookroom", bookingDetails);
+      const result = await axios.post(
+        "https://wondertour.onrender.com/api/bookings/bookroom",
+        bookingDetails
+      );
       setLoading(false);
       Swal.fire(
         "Congratulations",

@@ -18,9 +18,12 @@ function MyTourBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/tourbookings/getbookingbyuserid", {
-          userid: user._id,
-        })
+        await axios.post(
+          "https://wondertour.onrender.com/api/tourbookings/getbookingbyuserid",
+          {
+            userid: user._id,
+          }
+        )
       ).data;
       settourBookings(data);
     } catch (error) {
@@ -39,10 +42,13 @@ function MyTourBookingScreen() {
     setLoading(true);
     try {
       const data = (
-        await axios.post("/api/tourbookings/cancelbooking", {
-          bookingid,
-          tourid,
-        })
+        await axios.post(
+          "https://wondertour.onrender.com/api/tourbookings/cancelbooking",
+          {
+            bookingid,
+            tourid,
+          }
+        )
       ).data;
       setLoading(false);
       Swal.fire(

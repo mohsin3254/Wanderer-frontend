@@ -40,7 +40,11 @@ function AdminBookingScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/bookings/getallbookings")).data;
+      const data = (
+        await axios.post(
+          "https://wondertour.onrender.com/api/bookings/getallbookings"
+        )
+      ).data;
       setBookings(data);
     } catch (error) {
       console.log(error);

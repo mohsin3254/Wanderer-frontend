@@ -34,7 +34,12 @@ function AdminAddProductScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/products/addproduct", values)).data;
+      const data = (
+        await axios.post(
+          "https://wondertour.onrender.com/api/products/addproduct",
+          values
+        )
+      ).data;
       Swal.fire(
         "Congratulations",
         "Your Product Added Successfully",

@@ -64,7 +64,7 @@ function TourBookingscreen({ match }) {
     try {
       setLoading(false);
       const result = await axios.post(
-        "/api/tourbookings/booktour",
+        "https://wondertour.onrender.com/api/tourbookings/booktour",
         bookingDetails
       );
       setLoading(false);

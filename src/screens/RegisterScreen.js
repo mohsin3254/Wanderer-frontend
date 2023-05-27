@@ -37,7 +37,12 @@ function RegisterScreen() {
       setSuccess("");
 
       try {
-        const result = (await axios.post("/api/users/register", user)).data;
+        const result = (
+          await axios.post(
+            "https://wondertour.onrender.com/api/users/register",
+            user
+          )
+        ).data;
         console.log(result);
         setSuccess(result);
         setName("");

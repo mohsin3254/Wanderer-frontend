@@ -33,7 +33,11 @@ function Homescreen() {
       try {
         setError("");
         setLoading(true);
-        const data = (await axios.get("/api/rooms/getallrooms")).data;
+        const data = (
+          await axios.get(
+            "https://wondertour.onrender.com/api/rooms/getallrooms"
+          )
+        ).data;
         //console.log(data);
         setRooms(data);
         setDuplicateRooms(data);

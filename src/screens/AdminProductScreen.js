@@ -31,7 +31,11 @@ function AdminProductScreen() {
     setError("");
     setLoading(true);
     try {
-      const data = (await axios.post("/api/products/getallproducts")).data;
+      const data = (
+        await axios.post(
+          "https://wondertour.onrender.com/api/products/getallproducts"
+        )
+      ).data;
       setProducts(data);
     } catch (error) {
       console.log(error);
